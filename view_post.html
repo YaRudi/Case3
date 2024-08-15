@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Post</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>View Post</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="create_post.html">Create Post</a>
+            <a href="subscriptions.html">Subscriptions</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+    <main>
+        <h2 id="postTitle"></h2>
+        <p id="postContent"></p>
+        <p id="postTags"></p>
+        <div id="comments"></div>
+        <form id="commentForm">
+            <textarea id="commentContent" placeholder="Add a comment" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <button id="editButton">Edit</button>
+        <button id="deleteButton">Delete</button>
+    </main>
+    <script src="js/scripts.js"></script>
+    <script>
+        displayPost();
+        document.getElementById('editButton').addEventListener('click', function() {
+            const postId = new URLSearchParams(window.location.search).get('id');
+            window.location.href = `edit_post.html?id=${postId}`;
+        });
+        document.getElementById('deleteButton').addEventListener('click', deletePost);
+        document.getElementById('commentForm').addEventListener('submit', addComment);
+    </script>
+</body>
+</html>

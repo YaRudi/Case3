@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Edit Post</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+    <main>
+        <form id="editForm">
+            <input type="text" id="editTitle" placeholder="Title" required>
+            <textarea id="editContent" placeholder="Content" required></textarea>
+            <button type="submit">Save Changes</button>
+        </form>
+    </main>
+    <script src="js/scripts.js"></script>
+    <script>
+        loadPostForEdit();
+        document.getElementById('editForm').addEventListener('submit', savePost);
+    </script>
+</body>
+</html>
